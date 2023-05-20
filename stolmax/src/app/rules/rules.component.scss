@@ -1,0 +1,17 @@
+.container-app {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.stolmax-container {
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+.stolmax-content {
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    overflow: auto;
+}
