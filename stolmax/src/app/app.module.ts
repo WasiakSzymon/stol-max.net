@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { AppStateService } from './app.state';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevtoolsModule, DevToolsFeatureOptions } from '@ngrx/store-devtools';
+import { appReducer } from './reducers';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -25,11 +25,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     RouterModule,
     HeaderComponent,
-    StoreModule.forRoot({}, {}),
-    StoreModule.forRoot(reducers, {
-      metaReducers
+    StoreModule.forRoot({ app: appReducer, router: routerReducer }),
+    StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, logOnly: !isDevMode(), serialize: true, trace: true,
+      features: <DevToolsFeatureOptions>{ persist: true }
     }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+
   ]
 })
 export class AppModule { }

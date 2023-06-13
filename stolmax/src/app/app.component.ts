@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AppStateService } from './app.state';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { AppStateService } from './app.state';
 export class AppComponent {
   title = 'stolmax';
 
-  constructor(public appStateService: AppStateService) {
+  constructor() {
 
   }
 

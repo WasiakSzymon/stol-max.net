@@ -1,19 +1,14 @@
-import { isDevMode } from '@angular/core';
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
-} from '@ngrx/store';
+import { createReducer, on } from "@ngrx/store";
+import { setScrollPosition } from "../actions";
 
-export interface State {
-
-}
-
-export const reducers: ActionReducerMap<State> = {
-
+export const initialState = {
+  scrollPosition: 0
 };
 
+const _appReducer = createReducer(initialState,
+  on(setScrollPosition, state => state),
+);
 
-export const metaReducers: MetaReducer<State>[] = isDevMode() ? [] : [];
+export function appReducer(state: any, action: any) {
+  return _appReducer(state, action);
+}
