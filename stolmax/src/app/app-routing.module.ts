@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MainPageComponent } from './main-page/main-page.component';
+import { RulesPageComponent } from './rules-page/rules-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
+    component: MainPageComponent
   },
   {
-    path: 'rules',
-    loadChildren: () => import('./rules/rules.module').then(m => m.RulesModule)
+    path: 'o-nas',
+    component: RulesPageComponent
   },
   {
     path: '**',
