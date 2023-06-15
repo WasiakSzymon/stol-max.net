@@ -9,7 +9,7 @@
             <br> domu lub firmie będzie tylko i
             <br> wyłącznie przyjemnością
         </p>
-        <button mat-raised-button>GALERIA</button>
+        <a mat-raised-button class="btn-gallery-start" [routerLink]="['/galeria']">GALERIA</a>
     </div>
     <div class="d-flex w-50 h-100 align-items-center justify-content-center">
         <div class="grid">
@@ -21,37 +21,41 @@
                 alt="Kuchnia białe fronty błyszczące, białe marmurowe blaty, na czarnej ścianie">
         </div>
     </div>
-    <button mat-button class="d-flex more-info">WIĘCEJ INFORMACJI <br> <mat-icon>expand_more</mat-icon></button>
+    <button mat-button class="d-flex more-info" (click)="moveToMoreInfo()">WIĘCEJ INFORMACJI <br>
+        <mat-icon>expand_more</mat-icon></button>
 </section>
 <section class="d-flex pt-5 pb-5 ps-5 pe-5 mt-5 flex-column" style="background: white;">
     <div class="d-flex w-100 justify-content-center align-items-center mb-1">
-        <img src="/assets/break.webp" width="50px" alt="line">
+        <img src="/assets/break.webp" width="50px"
+            alt="zielony szeroki cienki prostokąt, element jest przerywnikiem na stronie" id="content-begin">
     </div>
     <div class="d-flex">
         <div class="d-flex w-100 justify-content-center align-items-center mb-5"
             style="display:flex; align-items: center; justify-content: center; font-size:32px;">
-            <h3 style="font-size: 32px;">O NASZEJ</h3>
-            <h3 style="margin-left: 0.7rem; font-size: 32px; color: #68bd45;">FIRMIE</h3>
+            <!-- <h3 style="font-size: 32px;">O NASZEJ</h3>
+            <h3 style="margin-left: 0.7rem; font-size: 32px; color: #68bd45;">FIRMIE</h3> -->
         </div>
     </div>
     <div class="d-flex w-100">
-        <mat-card class="example-card">
+        <mat-card class="example-card d-flex">
             <mat-card-header class="p-2 ps-3 pe-3">
-                <mat-card-title>Patrycjusz Wybraniec</mat-card-title>
-                <mat-card-subtitle>Prezes & Stolarz</mat-card-subtitle>
+                <mat-card-title>O nas</mat-card-title>
+                <mat-card-subtitle>Patrycjusz Wybraniec</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="/assets/patrycjusz-stolmax.jpeg"
-                alt="Zdjęcie Pana Patrcjusza Wybrańca w jego warsztacie podczas pracy, założyciela i stolarza firmy stol-max">
-            <mat-card-content>
+                alt="Zdjęcie Pana Patrcjusza Wybrańca w jego warsztacie podczas pracy, założyciela i stolarza firmy stol-max. Stolarz tnie drewniane płyty na wielkim okrągłym ostrzu na maszynie do tego przeznaczonej.">
+            <mat-card-content class="text-card pt-2">
                 <p>
-                    Pan Patrycjusz Wybraniec z firmy Stol-Max Meble na wymiar www.stol-max.net zajmuję się stolarstwem
+                    Pan <b>Patrycjusz Wybraniec z firmy Stol-Max Meble</b> na wymiar www.stol-max.net zajmuję się
+                    stolarstwem
                     od ćwierć wieku. Choć szkołę ukończył w zupełnie innym kierunku, to jego obecny fach ma we krwi. –
-                    Od kiedy byłem dzieckiem, w rodzinie zawsze ktoś zajmował się „stolarką”. Czy to dziadek, czy wujek,
+                    Od kiedy byłem dzieckiem, w rodzinie zawsze ktoś zajmował się <b>„stolarką”</b>. Czy to dziadek, czy
+                    wujek,
                     a potem ja sam zacząłem pracować w firmie zajmującej się produkcją mebli.
                 </p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>O NAS</button>
+                <a mat-button [routerLink]="['/o-nas']">O NAS</a>
             </mat-card-actions>
         </mat-card>
         <mat-card class="example-card">
@@ -60,16 +64,16 @@
                 <mat-card-subtitle>W czym się specjalizujemy</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="/assets/specjalizacja.png"
-                alt="Zdjęcie Pana Patrcjusza Wybrańca w jego warsztacie podczas pracy, założyciela i stolarza firmy stol-max">
-            <mat-card-content>
+                alt="Zdjęcie szaroniebieskiej kuchni z wyspą na środku, czarne klamki, drewniane brazowe blaty. Stworzone przez stol-max tychy patrycjusz wybraniec">
+            <mat-card-content class="text-card pt-2">
                 <p>
                     Od projektowania wnętrz po tworzenie niestandardowych rozwiązań, nasz zespół posiada bogate
-                    doświadczenie w różnorodnych dziedzinach. Zapraszamy do zapoznania się z ofertą oraz opiniami
-                    naszych klientów.
+                    doświadczenie w różnorodnych dziedzinach. Zapraszamy do <b>zapoznania się z ofertą oraz opiniami
+                        naszych klientów</b>.
                 </p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>OFERTA</button>
+                <a mat-button [routerLink]="['/oferta']">OFERTA</a>
             </mat-card-actions>
         </mat-card>
         <mat-card class="example-card">
@@ -78,16 +82,17 @@
                 <mat-card-subtitle>Sprawdź nasze realizacje</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="/assets/realizacje.jpeg"
-                alt="Zdjęcie Pana Patrcjusza Wybrańca w jego warsztacie podczas pracy, założyciela i stolarza firmy stol-max">
-            <mat-card-content>
+                alt="Zdjęcie jasnoszarej błyszącej kuchni z białymi blatami i czarnymi klamkami. Stworzone przez stol-max tychy patrycjusz wybraniec">
+            <mat-card-content class="text-card pt-2">
                 <p>
-                    Zapraszamy Cię do odkrycia naszych fascynujących realizacji mebli! Tam znajdziesz
+                    Znajdziesz tu
                     inspirujące historie o naszych najnowszych projektach, które przekształcają zwykłe pomieszczenia w
-                    unikalne przestrzenie.
+                    unikalne przestrzenie. <b>Realizacje przykładowych kuchni na wymiar, biur oraz różnych mebli na
+                        zamówienie.</b>
                 </p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>GALERIA</button>
+                <a mat-button [routerLink]="['/galeria']">GALERIA</a>
             </mat-card-actions>
         </mat-card>
         <mat-card class="example-card">
@@ -96,18 +101,23 @@
                 <mat-card-subtitle>Skontaktuj się z nami</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="/assets/lokalizacja.png"
-                alt="Zdjęcie Pana Patrcjusza Wybrańca w jego warsztacie podczas pracy, założyciela i stolarza firmy stol-max">
-            <mat-card-content>
+                alt="Zdjęcie wycinku mapy google z pinezką ustawioną na siedzibę stol-max tychy patrycjusz wybraniec meble na wymiar">
+            <mat-card-content class="text-card pt-2">
                 <p>
-                    W celu kontaktu/wyceny prosimy o kontakt po przez adres e-mail <a
+                    <b>W celu kontaktu/wyceny prosimy o</b> kontakt po przez adres e-mail <a
                         href="mailto:stolmax@op.pl">stolmax@op.pl</a> lub telefonicznie <a href="tel:602 608 749">602
-                        608 749</a>
+                        608 749</a>.
                     Zachęcamy równie do skorzystania z formularza kontaktowego.
                 </p>
             </mat-card-content>
-            <mat-card-actions>
-                <button mat-button>KONTAKT</button>
+            <mat-card-actions style="justify-self: flex-end;">
+                <a mat-button [routerLink]="['/kontakt']">KONTAKT</a>
             </mat-card-actions>
         </mat-card>
     </div>
+    <div class="d-flex w-100 justify-content-center align-items-center mt-5">
+        <img src="/assets/break.webp" width="50px" alt="line">
+    </div>
 </section>
+
+<app-footer></app-footer>

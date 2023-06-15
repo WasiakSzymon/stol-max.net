@@ -23,7 +23,7 @@
     letter-spacing: 0.4px;
     text-align: right;
     color: #1b1b1b;
-    animation: text 1.2s ease-in;
+    animation: textAnim 1.2s ease-in;
 }
 
 .Dziki-nam-kada-wizyta-w-Twoim-domu-lub-firmie-bdzie-tylko-i {
@@ -36,7 +36,11 @@
     letter-spacing: 0.3px;
     text-align: right;
     color: #1b1b1b;
-    animation: text 1.2s ease-in;
+    animation: textAnim 1.2s ease-in;
+}
+
+.btn-gallery-start {
+    animation: textAnim 1.2s ease-in;
 }
 
 .grid {
@@ -93,9 +97,9 @@
     }
 }
 
-@keyframes text {
+@keyframes textAnim {
     0% {
-        transform: (-75%);
+        transform: translateX(-75%);
     }
 
     100% {
@@ -106,10 +110,13 @@
 .example-card {
     max-width: 23%;
     margin: 1rem;
-    height: fit-content;
 }
 
 .example-header-image {
     background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
     background-size: cover;
+}
+
+.text-card {
+    height: 100%;
 }

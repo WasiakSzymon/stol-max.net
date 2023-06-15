@@ -10,13 +10,15 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule, DevToolsFeatureOptions } from '@ngrx/store-devtools';
 import { appReducer } from './reducers';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    
   ],
   bootstrap: [AppComponent],
   imports: [
@@ -25,7 +27,8 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
     AppRoutingModule,
     RouterModule,
     HeaderComponent,
-    StoreModule.forRoot({ app: appReducer, router: routerReducer }),
+    BrowserAnimationsModule,
+    StoreModule.forRoot({ appState: appReducer, router: routerReducer }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25, logOnly: !isDevMode(), serialize: true, trace: true,

@@ -1,95 +1,120 @@
 :host {
     height: 100%;
     width: 100%;
-    padding: 1.5rem 0;
     background-color: transparent;
 }
 
 .navbar-stolmax {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     height: 100%;
     width: 100%;
+    position: relative;
     padding-left: 10%;
     padding-right: 10%;
-    background: transparent;
+    animation: deactive-header 0.3s ease;
+    background: rgba(255, 255, 255, 0);
     scale: 0.8;
-    animation: deactive-header 0.5s ease-out;
 }
 
 .navbar-stolmax.active {
+    border-bottom: 1px solid #68bd45;
+    animation: active-header 0.3s ease;
+    background: rgba(255, 255, 255, 1);
     scale: 1;
-    background-color: white;
-    animation: active-header 0.5s ease-out;
 }
 
 @keyframes active-header {
     0% {
         background: rgba(255, 255, 255, 0);
+        scale: 0.8;
     }
     10% {
         background: rgba(255, 255, 255, 0.1);
+        scale: 0.83;
     }
     20% {
         background: rgba(255, 255, 255, 0.2);
+        scale: 0.85;
     }
     30% {
         background: rgba(255, 255, 255, 0.3);
+        scale: 0.87;
     }
     40% {
         background: rgba(255, 255, 255, 0.4);
+        scale: 0.9;
     }
     50% {
         background: rgba(255, 255, 255, 0.5);
+        scale: 0.92;
     }
     60% {
         background: rgba(255, 255, 255, 0.6);
+        scale: 0.95;
     }
     70% {
         background: rgba(255, 255, 255, 0.7);
+        scale: 0.96;
     }
     80% {
         background: rgba(255, 255, 255, 0.8);
+        scale: 0.98;
     }
     90% {
         background: rgba(255, 255, 255, 0.9);
+        scale: 0.99;
     }
     100% {
         background: rgba(255, 255, 255, 1);
+        scale: 1;
     }
 }
 
 @keyframes deactive-header {
-    100% {
-        background: rgba(255, 255, 255, 0);
-    }
-    90% {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    80% {
-        background: rgba(255, 255, 255, 0.2);
-    }
-    70% {
-        background: rgba(255, 255, 255, 0.3);
-    }
-    60% {
-        background: rgba(255, 255, 255, 0.4);
-    }
-    50% {
-        background: rgba(255, 255, 255, 0.5);
-    }
-    40% {
-        background: rgba(255, 255, 255, 0.6);
-    }
-    30% {
-        background: rgba(255, 255, 255, 0.7);
-    }
-    20% {
-        background: rgba(255, 255, 255, 0.8);
+    0% {
+        background: rgba(255, 255, 255, 1);
+        scale: 1;
     }
     10% {
         background: rgba(255, 255, 255, 0.9);
+        scale: 0.98;
     }
-    0% {
-        background: rgba(255, 255, 255, 1);
+    20% {
+        background: rgba(255, 255, 255, 0.8);
+        scale: 0.97;
+    }
+    30% {
+        background: rgba(255, 255, 255, 0.7);
+        scale: 0.95;
+    }
+    40% {
+        background: rgba(255, 255, 255, 0.6);
+        scale: 0.93;
+    }
+    50% {
+        background: rgba(255, 255, 255, 0.5);
+        scale: 0.9;
+    }
+    60% {
+        background: rgba(255, 255, 255, 0.4);
+        scale: 0.87;
+    }
+    70% {
+        background: rgba(255, 255, 255, 0.3);
+        scale: 0.85;
+    }
+    80% {
+        background: rgba(255, 255, 255, 0.2);
+        scale: 0.84;
+    }
+    90% {
+        background: rgba(255, 255, 255, 0.1);
+        scale: 0.82;
+    }
+    100% {
+        background: rgba(255, 255, 255, 0);
+        scale: 0.8;
     }
 }
 
@@ -107,9 +132,9 @@
 }
 
 ::ng-deep {
-    a .mdc-button__label {
+    .navbar-stolmax a .mdc-button__label {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 18px !important;
         letter-spacing: 0.2px;
         text-decoration-color: rgb(27, 27, 27);
         text-decoration-line: none;
@@ -118,7 +143,7 @@
         word-break: keep-all;
     }
 
-    a.active-link .mdc-button__label {
+    .navbar-stolmax a.active-link .mdc-button__label {
         font-weight: bold;
         border-bottom: 3px solid 68bd45;
     }

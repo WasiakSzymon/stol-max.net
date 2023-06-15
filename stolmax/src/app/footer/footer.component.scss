@@ -2,124 +2,66 @@
     height: 100%;
     width: 100%;
     padding: 1.5rem 0;
-    background-color: transparent;
 }
 
-.navbar-stolmax {
-    height: 100%;
-    width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    background-color: transparent;
-    scale: 0.8;
-    animation: deactive-header 0.5s ease-out;
+.footer-container {
+    background-color: black;
 }
 
-.navbar-stolmax.active {
-    scale: 1;
-    background-color: white;
-    animation: active-header 0.5s ease-out;
+.kontakt-desc {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    text-align: left;
+    color: #fff;
 }
 
-@keyframes active-header {
-    0% {
-        background: rgba(255, 255, 255, 0);
+.icon-desc {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    margin-left: 0.5rem;
+}
+
+.kontakt-info {
+    font-family: Lato;
+    font-size: 18px;
+    text-align: left;
+    color: #fff;
+}
+
+.site-map {
+    color: #fff;
+    font-family: Lato;
+    text-align: left;
+    list-style-type: none;
+    a {
+        color: white;
     }
-    10% {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    20% {
-        background: rgba(255, 255, 255, 0.2);
-    }
-    30% {
-        background: rgba(255, 255, 255, 0.3);
-    }
-    40% {
-        background: rgba(255, 255, 255, 0.4);
-    }
-    50% {
-        background: rgba(255, 255, 255, 0.5);
-    }
-    60% {
-        background: rgba(255, 255, 255, 0.6);
-    }
-    70% {
-        background: rgba(255, 255, 255, 0.7);
-    }
-    80% {
-        background: rgba(255, 255, 255, 0.8);
-    }
-    90% {
-        background: rgba(255, 255, 255, 0.9);
-    }
-    100% {
-        background: rgba(255, 255, 255, 1);
+    > a .mdc-button__label {
+        color: white;
+        font-size: 14px !important;
     }
 }
 
-@keyframes deactive-header {
-    100% {
-        background: rgba(255, 255, 255, 0);
-    }
-    90% {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    80% {
-        background: rgba(255, 255, 255, 0.2);
-    }
-    70% {
-        background: rgba(255, 255, 255, 0.3);
-    }
-    60% {
-        background: rgba(255, 255, 255, 0.4);
-    }
-    50% {
-        background: rgba(255, 255, 255, 0.5);
-    }
-    40% {
-        background: rgba(255, 255, 255, 0.6);
-    }
-    30% {
-        background: rgba(255, 255, 255, 0.7);
-    }
-    20% {
-        background: rgba(255, 255, 255, 0.8);
-    }
-    10% {
-        background: rgba(255, 255, 255, 0.9);
-    }
-    0% {
-        background: rgba(255, 255, 255, 1);
-    }
-}
 
-.logo {
-    height: 100%;
-    width: 33%;
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-
-    > img {
-        height: auto;
-        width: 100%;
-    }
-}
-
-::ng-deep {
-    a .mdc-button__label {
-        font-weight: 500;
-        font-size: 18px;
-        letter-spacing: 0.2px;
-        text-decoration-color: rgb(27, 27, 27);
-        text-decoration-line: none;
-        text-decoration-style: solid;
-        text-decoration-thickness: auto;
-        word-break: keep-all;
-    }
-
-    a.active-link .mdc-button__label {
-        font-weight: bold;
-        border-bottom: 3px solid 68bd45;
-    }
+.footer-text {
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    text-align: center;
+    color: #fff;
 }

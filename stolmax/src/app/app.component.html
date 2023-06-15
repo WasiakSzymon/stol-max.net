@@ -1,9 +1,9 @@
 <div class="container-fluid container-app">
     <div class="d-flex w-100 stolmax-container">
         <div class="d-flex w-100 stolmax-header">
-            <app-header [active]="appStateService.headerActive$ | async"></app-header>
+            <app-header [active]="scrollPosition$ | async"></app-header>
         </div>
-        <div class="d-flex w-100 stolmax-content">
+        <div class="d-flex w-100 stolmax-content" [class.active]="scrollPosition$ | async" #routerContent>
             <router-outlet></router-outlet>
         </div>
     </div>

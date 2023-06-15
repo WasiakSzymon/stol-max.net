@@ -1,5 +1,5 @@
 import { NgOptimizedImage, provideImageKitLoader } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 
@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [MatButtonModule, RouterModule, NgOptimizedImage]
 })

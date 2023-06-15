@@ -19,8 +19,11 @@ $headerHeight: 115px;
     background-size: 100% 100%, 100% 100%;
     animation: bg 1.5s ease-in;
 }
+
 .stolmax-content {
     height: calc(100% - $headerHeight);
     width: 100%;
     overflow: auto;
+
 }
+
