@@ -31,12 +31,18 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@splidejs/splide/dist/css/splide.min.css",
+              "node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@splidejs/splide/dist/js/splide.js"
+            ]
           },
           "configurations": {
             "production": {
+              "buildOptimizer": true,
+              "optimization": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -94,9 +100,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@splidejs/splide/dist/css/splide.min.css",
+              "node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@splidejs/splide/dist/js/splide.js"
+            ]
           }
         },
         "server": {
@@ -112,7 +122,7 @@
               "outputHashing": "media"
             },
             "development": {
-              "optimization": false,
+              "optimization": true,
               "sourceMap": true,
               "extractLicenses": false,
               "vendorChunk": true
@@ -138,7 +148,8 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/"
+              "/",
+              "/o-nas"
             ]
           },
           "configurations": {

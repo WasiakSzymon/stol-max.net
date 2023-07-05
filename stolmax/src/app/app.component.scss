@@ -9,12 +9,22 @@ $headerHeight: 115px;
     height: $headerHeight;
     width: 100%;
 }
+.stolmax-container.active {
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    z-index: 0;
+    background: url(/assets/background.webp);
+    background-position: center, center;
+    background-size: 100% 100%, 100% 100%;
+    animation: bg 1.5s ease-in;
+}
 .stolmax-container {
     height: 100vh;
     width: 100%;
     flex-direction: column;
-    z-index: -1;
-    background: url(/assets/background.webp);
+    z-index: 0;
+    background: white;
     background-position: center, center;
     background-size: 100% 100%, 100% 100%;
     animation: bg 1.5s ease-in;
@@ -24,6 +34,4 @@ $headerHeight: 115px;
     height: calc(100% - $headerHeight);
     width: 100%;
     overflow: auto;
-
 }
-
