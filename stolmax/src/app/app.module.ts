@@ -10,7 +10,7 @@ import { ActionReducer, MetaReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule, DevToolsFeatureOptions } from '@ngrx/store-devtools';
 import { appReducer } from './reducers';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { localStorageSync } from 'ngrx-store-localstorage';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -25,6 +25,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
   ],
   providers: [
     provideClientHydration(),
+    provideAnimations()
   ],
   bootstrap: [AppComponent],
   imports: [

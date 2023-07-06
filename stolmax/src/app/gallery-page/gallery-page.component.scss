@@ -24,3 +24,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.active-cat {
+    font-weight: bold;
+    color: black;
+    scale: 1.2;
+    filter: contrast(60%);
+}
+
+::ng-deep {
+    gallery {
+        // background-color: white !important;
+        border: solid 3px black;
+        border-radius: 4px;
+    }
+}

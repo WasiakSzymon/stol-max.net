@@ -1,0 +1,195 @@
+:host {
+    width: 100%;
+    height: 100%;
+}
+
+.Description {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+}
+
+.Zapraszamy-do-przejrzenia-naszej-bogatej-oferty-by-mgmoga > p {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #717171;
+    margin-bottom: 2.5rem;
+}
+
+.oferta-header {
+    font-family: Lato;
+    font-size: 21px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.92;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #111111;
+    padding: 1.5rem 1rem;
+}
+
+.offer-item-box:hover {
+    scale: 1.1;
+    animation: activate-item-box 0.3s ease;
+    cursor: pointer;
+}
+.offer-item-box {
+    scale: 1;
+    animation: deactivate-item-box 0.3s ease;
+    cursor: pointer;
+}
+
+@keyframes activate-item-box {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 1.1;
+    }
+}
+
+@keyframes deactivate-item-box {
+    0% {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+.oferta-gray-square {
+    background-color: #f5f5f5;
+    transform: translateY(1rem);
+    height: 100%;
+}
+
+.oferta-green-square {
+    background-color: #68bd45;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (min-width: 992px) {
+    .oferta-margin-right {
+        margin-right: 0.5rem;
+        margin-bottom: 0rem;
+    }
+    .ofert-padding-equal {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    .oferta-margin-equal {
+        margin-right: 0.25rem;
+        margin-left: 0.25rem;
+        margin-bottom: 0rem;
+    }
+    .padding-opinie-right {
+        padding-right: 0.5rem;
+        margin-bottom: 0rem;
+    }
+}
+
+@media (min-width: 100px) {
+    .oferta-margin-right {
+        margin-right: 0rem;
+        margin-bottom: 1rem;
+    }
+    .ofert-padding-equal {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+    .oferta-margin-equal {
+        margin-right: 0rem;
+        margin-left: 0rem;
+        margin-bottom: 1rem;
+    }
+    .padding-opinie-right {
+        padding-right: 0rem;
+        margin-bottom: 0rem;
+    }
+}
+
+.opinia-box {
+    padding: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 3.9px 0.1px rgba(0, 0, 0, 0.16);
+    height: 100%;
+    position: relative;
+}
+
+.oferta-header {
+    font-family: Lato;
+    font-size: 21px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.92;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #111111;
+    padding: 1.5rem 1rem;
+}
+
+.OPINIE > h2 {
+    font-family: Lato;
+    font-size: 34px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.76;
+    letter-spacing: 0.7px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2rem;
+}
+
+.opinia {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5d5c5c;
+    margin-top: -0.5rem;
+}
+
+.opinia-autor {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 200;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2d2d2d;
+}
+
+.paralax {
+    width: 100%;
+    min-height: 100%;
+    background-image: url("/assets/bg.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
