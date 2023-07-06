@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import {
   GalleryModule,
@@ -7,13 +7,12 @@ import {
   ImageItem,
   ImageSize,
   ThumbnailsPosition,
-  Gallery,
-  GalleryComponent,
+  Gallery
 } from 'ng-gallery';
 import { LightboxModule, Lightbox } from 'ng-gallery/lightbox';
 import { MatButtonModule } from '@angular/material/button';
-import 'hammerjs';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'stolmax-gallery-page',
@@ -29,11 +28,14 @@ export class GalleryPageComponent implements OnInit {
   categories = ['Biuro', 'Salon', 'Kuchnia', 'Łazienka', 'Szafy', 'Sypialania'];
   selectedCategory = 'Biuro';
 
-  constructor(public gallery: Gallery, public lightbox: Lightbox, public httpClient: HttpClient) { }
+  constructor(public gallery: Gallery, public lightbox: Lightbox, public httpClient: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object) { }
 
 
   ngOnInit() {
-    this.getCategory(this.selectedCategory);
+    if (isPlatformBrowser(this.platformId)) {
+      this.getCategory(this.selectedCategory);
+    }
   }
 
   setCategory(cat: string) {
@@ -42,24 +44,20 @@ export class GalleryPageComponent implements OnInit {
   }
 
   getCategory(cat: string) {
-    this.httpClient.get<any[]>(`/assets/gallery/${cat}.json`).subscribe(imgConfig => {
+    this.httpClient.get<any[]>(`/assets/gallery/${cat}.json`).pipe(take(1)).subscribe(imgConfig => {
 
       this.items = imgConfig.map(
         (item) => new ImageItem({ src: item.srcUrl, thumb: item.previewUrl })
       );
-      // Get a lightbox gallery ref
+
       const lightboxRef = this.gallery.ref('lightbox');
 
-      // Add custom gallery config to the lightbox (optional)
       lightboxRef.setConfig({
         imageSize: ImageSize.Contain,
-        thumbPosition: ThumbnailsPosition.Top,
+        thumbPosition: ThumbnailsPosition.Top
       });
 
-      // Load items into the lightbox gallery ref
       lightboxRef.load(this.items);
-
-      this.gallery.resetAll();
     })
   }
 }

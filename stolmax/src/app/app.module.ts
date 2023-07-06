@@ -13,10 +13,15 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { localStorageSync } from 'ngrx-store-localstorage';
 
-export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+const metaReducers: Array<MetaReducer<any, any>> = [];
+const localStorageSyncReducer = (
+  reducer: ActionReducer<any>
+): ActionReducer<any> => {
   return localStorageSync({ keys: ['appState'], rehydrate: true })(reducer);
+};
+if (typeof window !== "undefined") {
+  metaReducers.push(localStorageSyncReducer);
 }
-const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 
 @NgModule({

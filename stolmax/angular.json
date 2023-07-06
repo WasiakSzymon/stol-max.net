@@ -33,10 +33,15 @@
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@splidejs/splide/dist/css/splide.min.css",
-              "node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css"
+              "node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css",
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": [
               "node_modules/@splidejs/splide/dist/js/splide.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "deepmerge",
+              "leaflet"
             ]
           },
           "configurations": {
@@ -46,8 +51,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1.5mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -163,6 +168,15 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "stolmax:build:production",
+            "serverTarget": "stolmax:server:production",
+            "prerenderTarget": "stolmax:prerender:production"
+          }
         }
       }
     }
