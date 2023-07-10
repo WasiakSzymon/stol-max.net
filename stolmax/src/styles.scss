@@ -106,6 +106,7 @@ $stolmax-theme: mat.define-light-theme(
   font-style: normal;
   font-weight: 400;
   src: local("Lato"), local("Lato-Regular"), url("assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -177,5 +178,4 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

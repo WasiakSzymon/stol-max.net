@@ -50,11 +50,11 @@ export class ContactPageComponent implements AfterViewInit {
 
     // Add a tilelayer
     this.leafletService.L.tileLayer(
-      'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+      'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
       {
         attribution:
-          'copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>,' +
-          ' Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+          'copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>,' +
+          ' Tiles courtesy of <a href="https://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
       }
     ).addTo(this.map);
 

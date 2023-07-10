@@ -12,6 +12,7 @@ import { appReducer } from './reducers';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { localStorageSync } from 'ngrx-store-localstorage';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 const metaReducers: Array<MetaReducer<any, any>> = [];
 const localStorageSyncReducer = (
@@ -45,6 +46,12 @@ if (typeof window !== "undefined") {
     StoreDevtoolsModule.instrument({
       maxAge: 25, logOnly: !isDevMode(), serialize: true, trace: true,
       features: <DevToolsFeatureOptions>{ persist: true }
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     })
   ]
 })

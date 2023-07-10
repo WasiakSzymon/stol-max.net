@@ -47,7 +47,7 @@ export class GalleryPageComponent implements OnInit {
     this.httpClient.get<any[]>(`/assets/gallery/${cat}.json`).pipe(take(1)).subscribe(imgConfig => {
 
       this.items = imgConfig.map(
-        (item) => new ImageItem({ src: item.srcUrl, thumb: item.previewUrl })
+        (item) => new ImageItem({ src: item.srcUrl, thumb: item.previewUrl, alt: 'Gray furnitures in kitchen (test image only)' })
       );
 
       const lightboxRef = this.gallery.ref('lightbox');

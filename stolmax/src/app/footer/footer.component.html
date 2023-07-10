@@ -7,11 +7,15 @@
                     <div class="mt-1 mb-2" style="height: 1px;background-color: #ffffff;width:200px;">
                     </div>
                 </li>
-                <li><a [routerLink]="['']" routerLinkActive="active-link">HOME</a></li>
-                <li><a [routerLink]="['/o-nas']" routerLinkActive="active-link">O NAS</a></li>
-                <li><a [routerLink]="['/oferta']" routerLinkActive="active-link">OFERTA</a></li>
-                <li><a [routerLink]="['/galeria']" routerLinkActive="active-link">GALERIA</a></li>
-                <li><a [routerLink]="['/kontakt']" routerLinkActive="active-link">KONTAKT</a></li>
+                <li><a [routerLink]="['']" routerLinkActive="active-link" aria-label="Main/Home page">HOME</a></li>
+                <li><a [routerLink]="['/o-nas']" routerLinkActive="active-link"
+                        aria-label="Informations about company">O NAS</a></li>
+                <li><a [routerLink]="['/oferta']" routerLinkActive="active-link" aria-label="Company offer">OFERTA</a>
+                </li>
+                <li><a [routerLink]="['/galeria']" routerLinkActive="active-link"
+                        aria-label="Gallery of furnitures">GALERIA</a></li>
+                <li><a [routerLink]="['/kontakt']" routerLinkActive="active-link"
+                        aria-label="Contact form and map">KONTAKT</a></li>
             </ul>
         </div>
         <div class="d-flex">
@@ -41,7 +45,7 @@
                             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="call"></mat-icon>
                         </a>
                         <a rel="nofollow" href="tel:602608749">
-                            <h4 class="icon-desc">602 608 749</h4>
+                            <span class="icon-desc">602 608 749</span>
                         </a>
                     </div>
                 </li>
@@ -51,17 +55,17 @@
                             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="mail"></mat-icon>
                         </a>
                         <a rel="nofollow" href="mailto:stolmax@op.pl">
-                            <h4 class="icon-desc">stolmax@op.pl</h4>
+                            <span class="icon-desc">stolmax@op.pl</span>
                         </a>
                     </div>
                 </li>
                 <li>
                     <div class="d-flex">
                         <a target="_blank" rel="nofollow" href="https://www.instagram.com/stolmax_tychy">
-                            <img width="20px" src="/assets/instagram-white.webp">
+                            <img width="20px" src="/assets/instagram-white.webp" alt="white icon of instagram">
                         </a>
                         <a target="_blank" rel="nofollow" href="https://www.instagram.com/stolmax_tychy">
-                            <h4 class="icon-desc">stolmax</h4>
+                            <span class="icon-desc">stolmax</span>
                         </a>
                     </div>
                 </li>
@@ -69,11 +73,11 @@
                     <div class="d-flex">
                         <a target="_blank" rel="nofollow"
                             href="https://www.facebook.com/pg/Stol-Max-Meble-na-wymiar-wwwstol-maxnet-343259572359311/about/?ref=page_internal">
-                            <img height="20px" src="/assets/fb-white.webp">
+                            <img height="20px" src="/assets/fb-white.webp" alt="white icon of facebook">
                         </a>
                         <a target="_blank" rel="nofollow"
                             href="https://www.facebook.com/pg/Stol-Max-Meble-na-wymiar-wwwstol-maxnet-343259572359311/about/?ref=page_internal">
-                            <h4 class="icon-desc px-2">STOL-MAX</h4>
+                            <span class="icon-desc px-2">STOL-MAX</span>
                         </a>
                     </div>
                 </li>
