@@ -26,13 +26,11 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.webp",
+              "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest",
-              "src/manifest.webmanifest",
               "src/sitemap.xml",
-              "src/robots.txt",
-              "src/manifest.webmanifest"
+              "src/robots.txt"
             ],
             "styles": [
               "src/styles.scss",
@@ -111,8 +109,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest",
-              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
             "styles": [
@@ -137,11 +133,13 @@
             "production": {
               "outputHashing": "media",
               "optimization": true,
-              "sourceMap": true
+              "sourceMap": false,
+              "buildOptimizer": true
             },
             "development": {
+              "buildOptimizer": true,
               "optimization": true,
-              "sourceMap": true,
+              "sourceMap": false,
               "extractLicenses": false,
               "vendorChunk": true
             }

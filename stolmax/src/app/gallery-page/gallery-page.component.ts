@@ -13,6 +13,7 @@ import { LightboxModule, Lightbox } from 'ng-gallery/lightbox';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { take } from 'rxjs/operators';
+import ImgsCdn from '../../assets/imgs.json';
 
 @Component({
   selector: 'stolmax-gallery-page',
@@ -23,6 +24,7 @@ import { take } from 'rxjs/operators';
 })
 export class GalleryPageComponent implements OnInit {
   items: GalleryItem[] = [];
+  baseCdnUrl = 'https://aniancep.sirv.com/';
 
 
   categories = ['Biuro', 'Salon', 'Kuchnia', 'Łazienka', 'Szafy', 'Sypialania'];
@@ -44,21 +46,20 @@ export class GalleryPageComponent implements OnInit {
   }
 
   getCategory(cat: string) {
-    this.httpClient.get<any[]>(`/assets/gallery/${cat}.json`).pipe(take(1)).subscribe(imgConfig => {
 
-      this.items = imgConfig.map(
-        (item) => new ImageItem({ src: item.srcUrl, thumb: item.previewUrl, alt: 'Gray furnitures in kitchen (test image only)' })
-      );
+    this.items = ImgsCdn.map(
+      (item) => new ImageItem({ src: this.baseCdnUrl + item, thumb: this.baseCdnUrl + item, alt: '' })
+    );
 
-      const lightboxRef = this.gallery.ref('lightbox');
+    const lightboxRef = this.gallery.ref('lightbox');
 
-      lightboxRef.setConfig({
-        imageSize: ImageSize.Contain,
-        thumbPosition: ThumbnailsPosition.Top
-      });
+    lightboxRef.setConfig({
+      imageSize: ImageSize.Contain,
+      thumbPosition: ThumbnailsPosition.Top
+    });
 
-      lightboxRef.load(this.items);
-    })
+    lightboxRef.load(this.items);
+
   }
 }
 

@@ -9,7 +9,7 @@ import { EventType, Router } from '@angular/router';
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Meta } from '@angular/platform-browser';
-
+import SampleJson from '../assets/test.json';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -50,10 +50,9 @@ export class AppComponent implements OnInit, AfterViewInit {
         if (event.type === EventType.NavigationEnd) {
           this.isHome$?.next(event.url === '/');
           this.routerContent?.nativeElement?.scrollTo({ behavior: 'smooth', 'top': 0 })
-
         }
       })
-    }
+    }    
   }
 
   ngAfterViewInit(): void {

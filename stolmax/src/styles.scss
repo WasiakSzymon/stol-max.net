@@ -1,3 +1,5 @@
+@import "material-design-icons/iconfont/material-icons.css";
+
 @use "@angular/material" as mat;
 @include mat.core();
 $main-palette: (
@@ -25,8 +27,8 @@ $main-palette: (
     A100: rgba(black, 0.87),
     A200: rgba(black, 0.87),
     A400: white,
-    A700: white,
-  ),
+    A700: white
+  )
 );
 $second-palette: (
   50: #f5f5f5,
@@ -53,8 +55,8 @@ $second-palette: (
     A100: rgba(black, 0.87),
     A200: rgba(black, 0.87),
     A400: rgba(black, 0.87),
-    A700: white,
-  ),
+    A700: white
+  )
 );
 $warn-palette: (
   50: #ffeaed,
@@ -77,15 +79,15 @@ $warn-palette: (
     600: white,
     700: white,
     800: white,
-    900: white,
-  ),
+    900: white
+  )
 );
 $main-pallete-stolmax: mat.define-palette($main-palette, 700, 300, 900);
 $second-pallete-stolmax: mat.define-palette($second-palette, 300, 100, 500);
 $warn-pallete-stolmax: mat.define-palette($warn-palette, 700);
 
 $stolmax-typography: mat.define-typography-config(
-  $font-family: "Lato",
+  $font-family: "Lato"
 );
 
 $stolmax-theme: mat.define-light-theme(
@@ -93,9 +95,9 @@ $stolmax-theme: mat.define-light-theme(
     color: (
       primary: $main-pallete-stolmax,
       accent: $second-pallete-stolmax,
-      warn: $warn-pallete-stolmax,
+      warn: $warn-pallete-stolmax
     ),
-    typography: $stolmax-typography,
+    typography: $stolmax-typography
   )
 );
 @include mat.all-component-themes($stolmax-theme);
@@ -105,7 +107,10 @@ $stolmax-theme: mat.define-light-theme(
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  src: local("Lato"), local("Lato-Regular"), url("assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
+  src:
+    local("Lato"),
+    local("Lato-Regular"),
+    url("assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
   font-display: swap;
 }
 

@@ -1,0 +1,130 @@
+{
+    "hits": [
+        {
+            "_index": "sirvfs-v3",
+            "_type": "_doc",
+            "_id": "d1970ff391282312a846fcfa207509a6f2aad49f",
+            "_score": null,
+            "_routing": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+            "_source": {
+                "accountId": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+                "filename": "/Images/Apple Watch white.jpg",
+                "dirname": "/Images",
+                "basename": "Apple Watch white.jpg",
+                "extension": ".jpg",
+                "id": "TM9ZEW4IPE9yxzdA0zSF2cUoeQxyZL9E",
+                "ctime": "2023-09-28T21:00:19.145Z",
+                "mtime": "2023-09-28T21:00:19.699Z",
+                "size": 3613967,
+                "contentType": "image/jpeg",
+                "meta": {
+                    "width": 1192,
+                    "height": 1412,
+                    "format": "JPEG",
+                    "duration": 0
+                }
+            },
+            "sort": [
+                "/Images/Apple Watch white.jpg"
+            ]
+        },
+        {
+            "_index": "sirvfs-v3",
+            "_type": "_doc",
+            "_id": "01c9665b3a02d42bdf62d45211b96f7d6bb86015",
+            "_score": null,
+            "_routing": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+            "_source": {
+                "accountId": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+                "filename": "/Images/Canon lenses.jpg",
+                "dirname": "/Images",
+                "basename": "Canon lenses.jpg",
+                "extension": ".jpg",
+                "id": "KMg7YU45JPcnLoAFcpMgop6Dk0DkFw33",
+                "ctime": "2023-09-28T21:00:19.276Z",
+                "mtime": "2023-09-28T21:00:19.722Z",
+                "size": 3370633,
+                "contentType": "image/jpeg",
+                "meta": {
+                    "width": 5000,
+                    "height": 3536,
+                    "format": "JPEG",
+                    "duration": 0,
+                    "EXIF": {
+                        "ColorSpace": "Uncalibrated"
+                    }
+                }
+            },
+            "sort": [
+                "/Images/Canon lenses.jpg"
+            ]
+        },
+        {
+            "_index": "sirvfs-v3",
+            "_type": "_doc",
+            "_id": "d575370f36babfc643f7cdd125d8c7b291d4e57a",
+            "_score": null,
+            "_routing": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+            "_source": {
+                "accountId": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+                "filename": "/Images/VW Beetle.jpg",
+                "dirname": "/Images",
+                "basename": "VW Beetle.jpg",
+                "extension": ".jpg",
+                "id": "eU31xyeBZgKPUQ6kVHaHEGCDrnA8t9YV",
+                "ctime": "2023-09-28T21:00:19.295Z",
+                "mtime": "2023-09-28T21:00:19.677Z",
+                "size": 3063358,
+                "contentType": "image/jpeg",
+                "meta": {
+                    "width": 5000,
+                    "height": 3597,
+                    "format": "JPEG",
+                    "duration": 0,
+                    "EXIF": {
+                        "DateTimeOriginal": "2016-06-25T09:29:06Z",
+                        "CreateDate": "2016-06-25T09:29:06Z",
+                        "ModifyDate": "2016-08-24T20:16:09Z",
+                        "ColorSpace": "sRGB",
+                        "UserComment": "",
+                        "Make": "Canon",
+                        "Model": "Canon EOS 760D"
+                    }
+                }
+            },
+            "sort": [
+                "/Images/VW Beetle.jpg"
+            ]
+        },
+        {
+            "_index": "sirvfs-v3",
+            "_type": "_doc",
+            "_id": "b44ff7f07fd67fd30b7ee27f6503e2d6a234f212",
+            "_score": null,
+            "_routing": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+            "_source": {
+                "accountId": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+                "filename": "/Images/watermark-logo.png",
+                "dirname": "/Images",
+                "basename": "watermark-logo.png",
+                "extension": ".png",
+                "id": "MsFlbANEPgFslGC2No8h52VcNlo1piQl",
+                "ctime": "2023-09-28T21:00:19.294Z",
+                "mtime": "2023-09-28T21:00:19.318Z",
+                "size": 14421,
+                "contentType": "image/png",
+                "meta": {
+                    "width": 500,
+                    "height": 249,
+                    "format": "PNG",
+                    "duration": 0
+                }
+            },
+            "sort": [
+                "/Images/watermark-logo.png"
+            ]
+        }
+    ],
+    "total": 4,
+    "_relation": "eq"
+}
