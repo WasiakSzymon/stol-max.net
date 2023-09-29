@@ -66,14 +66,14 @@
                 }
               ],
               "outputHashing": "all",
-              "sourceMap": false
+              "sourceMap": true
             },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": false,
+              "sourceMap": true,
               "namedChunks": true
             }
           },

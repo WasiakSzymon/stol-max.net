@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1695991123624,
+  "timestamp": 1695992694987,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,12 +13,12 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.1e37a824640489dd.js",
+        "/main.c8632f29a31b2012.js",
         "/manifest.webmanifest",
-        "/polyfills.305fc2df9c1bda14.js",
-        "/runtime.96c76b6edc9a52ec.js",
+        "/polyfills.796daef5cd782bfe.js",
+        "/runtime.652935eb765b7a4c.js",
         "/scripts.9b7b023c0bd82ae2.js",
-        "/styles.672270831c8c0b8b.css"
+        "/styles.dc47368a13e9a99c.css"
       ],
       "patterns": []
     },
@@ -135,14 +135,14 @@
     "/assets/gallery/Sypialnia.json": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
     "/assets/gallery/Szafy.json": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
     "/assets/gallery/Łazienka.json": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-    "/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
-    "/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
-    "/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
-    "/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
-    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
-    "/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/assets/icons/icon-128x128.png": "2b577279fea67206df60d662b967dfdad588e7f2",
+    "/assets/icons/icon-144x144.png": "63d804d9d7f890785792b2468eb0ffcc4642bcc9",
+    "/assets/icons/icon-152x152.png": "248204b6f5600682e2967f721f8ccb27f61b04b0",
+    "/assets/icons/icon-192x192.png": "248204b6f5600682e2967f721f8ccb27f61b04b0",
+    "/assets/icons/icon-384x384.png": "86c62ae2e0c7753e63feadf3f02d078d7fc24d32",
+    "/assets/icons/icon-512x512.png": "f69668506c1fa24958cb24b2a256cc77e7292649",
+    "/assets/icons/icon-72x72.png": "15b26baaf28f7278c77a8416fd6222f1a84c8ce5",
+    "/assets/icons/icon-96x96.png": "c863130417aabf5519977f13cdae3a172e4e98c7",
     "/assets/imgs.json": "cfc1d9e4dd1e48330822fe4733923bbe75eae940",
     "/assets/instagram-black.png": "d35afb8da26c8ac2b3b030ce3890d1ad23663127",
     "/assets/instagram-white.webp": "d6c2e2b13c2aed8662320060eed66e9fad89a2e9",
@@ -160,16 +160,16 @@
     "/assets/test.json": "0b3cc2d37f97f4aba2e608d2df31873dd80ae076",
     "/assets/wardrobe-icon.webp": "6d18de1ce34682d027148dc8ad4e5a3ee48a6f05",
     "/favicon.ico": "b1c2262b4f94812c165e7549e103d2b0f233abff",
-    "/index.html": "10433ca4c0aa869c15b12aae892b88523231c54a",
+    "/index.html": "f732db49a587f9daadab8624a6c120f72122b263",
     "/layers-2x.9859cd1231006a4a.png": "152a162333e46d24f9d89f566312fc0c64011dee",
     "/layers.ef6db8722c2c3f9a.png": "c9e7528e491a39232ba24a2706c6c739d6fb0f06",
-    "/main.1e37a824640489dd.js": "4264362fbdde9fb8f97a684286ed17dd101905e5",
+    "/main.c8632f29a31b2012.js": "ba39b47174a16197f930de1ec1ae2e4ced5b6262",
     "/manifest.webmanifest": "a52c7857e42b5ab3ec9b444353cb71be57731d50",
     "/marker-icon.d577052aa271e13f.png": "60a90bcbb2b42b7ddb4556db94eb7c1084b0e5da",
-    "/polyfills.305fc2df9c1bda14.js": "028bd8ead626df64f9f8ea90e2b397be77f2d91d",
-    "/runtime.96c76b6edc9a52ec.js": "2232d6818352758e386c470a05814726e2f97469",
-    "/scripts.9b7b023c0bd82ae2.js": "1e7a98ceb4a2085b1536f3593bb1e5fcb612166e",
-    "/styles.672270831c8c0b8b.css": "89cb827a075506321c8fe03a01c4423a81ed5f28"
+    "/polyfills.796daef5cd782bfe.js": "e0b72535f62e265b8eb4026f1163c3f0e042584a",
+    "/runtime.652935eb765b7a4c.js": "91dddaa3e67332f8870535de1a5cc016a7573e60",
+    "/scripts.9b7b023c0bd82ae2.js": "22956041119e5c4db2738525d3d383569433cafa",
+    "/styles.dc47368a13e9a99c.css": "b31757a028be779cf4b521d8f3b0ec44683f23ed"
   },
   "navigationUrls": [
     {
