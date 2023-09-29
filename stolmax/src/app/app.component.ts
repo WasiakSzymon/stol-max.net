@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { StolmaxAppState } from './reducers';
-import { BehaviorSubject, Observable, map, skip, take } from 'rxjs';
+import { BehaviorSubject, Observable, delay, map, skip, take } from 'rxjs';
 import { setScrollPosition } from './actions';
 import { selectScrollPosition } from './selectors';
 import { selectMoreInfoBtnClick } from './selectors';
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.routerContent?.nativeElement?.scrollTo({ behavior: 'smooth', 'top': (offsetTop - 150) })
       })
 
-      this.router?.events.pipe(skip(1)).subscribe(event => {
+      this.router?.events.pipe(skip(1), delay(200)).subscribe(event => {
         if (event.type === EventType.NavigationEnd) {
           this.isHome$?.next(event.url === '/');
           this.routerContent?.nativeElement?.scrollTo({ behavior: 'smooth', 'top': 0 })

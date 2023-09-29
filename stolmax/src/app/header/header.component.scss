@@ -165,8 +165,8 @@
 
     .mobile-header {
         display: flex !important;
-        align-items: end;
-        justify-content: end;
+        align-items: flex-end;
+        justify-content: flex-end;
         padding-right: 1rem;
         padding-left: 2rem;
     }
