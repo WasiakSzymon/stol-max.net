@@ -24,3 +24,17 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@media (max-width: 880px) {
+    .mobile {
+        width: 100% !important;
+    }
+
+    .mobile-container {
+        flex-direction: column;
+    }
+
+    .mobile-container-rev {
+        flex-direction: column-reverse;
+    }
+}
