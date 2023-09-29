@@ -1,18 +1,10 @@
 [
     {
-        "srcUrl": "/assets/realizacje.png",
-        "previewUrl": "/assets/realizacje.png"
+        "url": "/salon/salon1.jpeg",
+        "alt": ""
     },
     {
-        "srcUrl": "/assets/realizacje.png",
-        "previewUrl": "/assets/realizacje.png"
-    },
-    {
-        "srcUrl": "/assets/realizacje.png",
-        "previewUrl": "/assets/realizacje.png"
-    },
-    {
-        "srcUrl": "/assets/realizacje.png",
-        "previewUrl": "/assets/realizacje.png"
+        "url": "/salon/salon2.jpeg",
+        "alt": ""
     }
 ]

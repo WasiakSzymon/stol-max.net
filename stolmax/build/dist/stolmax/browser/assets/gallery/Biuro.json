@@ -1,18 +1,14 @@
 [
     {
-        "srcUrl": "/assets/realizacje.png",
-        "previewUrl": "/assets/realizacje.png"
+        "url": "/biuro/biuro1.jpeg",
+        "alt": "Zamykane drewniane drzwi"
     },
     {
-        "srcUrl": "/assets/about-1.jpg",
-        "previewUrl": "/assets/about-1.jpg"
+        "url": "/biuro/biuro2.jpeg",
+        "alt": ""
     },
     {
-        "srcUrl": "/assets/lokalizacja.png",
-        "previewUrl": "/assets/lokalizacja.png"
-    },
-    {
-        "srcUrl": "/assets/specjalizacja.png",
-        "previewUrl": "/assets/specjalizacja.png"
+        "url": "/biuro/biuro3.jpeg",
+        "alt": ""
     }
 ]

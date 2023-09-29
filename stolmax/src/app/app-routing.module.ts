@@ -1,31 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainPageComponent } from './main-page/main-page.component';
-import { AboutPageComponent } from './about-page/about-page.component';
-import { OfferPageComponent } from './offer-page/offer-page.component';
-import { GalleryPageComponent } from './gallery-page/gallery-page.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainPageComponent
+    loadComponent: () => import('./main-page/main-page.component').then((x) => x.MainPageComponent),
   },
   {
     path: 'o-nas',
-    component: AboutPageComponent
+    loadComponent: () => import('./about-page/about-page.component').then((x) => x.AboutPageComponent)
   },
   {
     path: 'oferta',
-    component: OfferPageComponent
+    loadComponent: () => import('./offer-page/offer-page.component').then((x) => x.OfferPageComponent)
   },
   {
     path: 'galeria',
-    component: GalleryPageComponent
+    loadComponent: () => import('./gallery-page/gallery-page.component').then((x) => x.GalleryPageComponent)
   },
   {
     path: 'kontakt',
-    component: ContactPageComponent
+    loadComponent: () => import('./contact-page/contact-page.component').then((x) => x.ContactPageComponent)
   },
   {
     path: '**',

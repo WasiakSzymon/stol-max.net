@@ -130,3 +130,39 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@media (max-width: 880px) {
+    .mobile-main-text {
+        width: 100% !important;
+        align-items: center !important;
+        padding: 0 1rem !important;
+        justify-content: center !important;
+    }
+
+    .mobile-main-grid {
+        display: none !important;
+    }
+
+    .card-main {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 1rem 0 !important;
+    }
+
+    .card-container {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .Najnowsze-trendy-w-meblarstwie {
+        text-align: center !important;
+    }
+
+    .Dziki-nam-kada-wizyta-w-Twoim-domu-lub-firmie-bdzie-tylko-i {
+        text-align: center !important;
+    }
+}
+
+.img-mobile {
+    max-width: 100% !important;
+}

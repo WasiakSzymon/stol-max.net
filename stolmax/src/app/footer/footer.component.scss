@@ -54,7 +54,6 @@
     }
 }
 
-
 .footer-text {
     font-family: Lato;
     font-size: 12px;
@@ -64,4 +63,15 @@
     line-height: 1.57;
     text-align: center;
     color: #fff;
+}
+
+@media (max-width: 880px) {
+    .footer-container-mobile {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: start !important;
+    }
+    .site-map {
+        padding-left: 0 !important;
+    }
 }

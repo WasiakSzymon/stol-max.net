@@ -1,15 +1,14 @@
-import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { StolmaxAppState } from './reducers';
 import { BehaviorSubject, Observable, map, skip, take } from 'rxjs';
 import { setScrollPosition } from './actions';
 import { selectScrollPosition } from './selectors';
 import { selectMoreInfoBtnClick } from './selectors';
 import { EventType, Router } from '@angular/router';
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Meta } from '@angular/platform-browser';
-import SampleJson from '../assets/test.json';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -52,7 +51,7 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.routerContent?.nativeElement?.scrollTo({ behavior: 'smooth', 'top': 0 })
         }
       })
-    }    
+    }
   }
 
   ngAfterViewInit(): void {
