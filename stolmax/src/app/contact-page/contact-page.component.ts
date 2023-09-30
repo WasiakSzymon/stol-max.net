@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { Circle, Marker, Map, Polygon, circle, latLng, tileLayer } from 'leaflet';
+import { Circle, Marker, Map, } from 'leaflet';
 import { LeafletService } from '../services/leaflet.service';
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -18,7 +17,7 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
   standalone: true,
   providers: [LeafletService],
   imports: [CommonModule, FooterComponent, RouterModule, MatFormFieldModule,
-    MatInputModule, MatButtonModule, ReactiveFormsModule, HttpClientModule]
+    MatInputModule, MatButtonModule, ReactiveFormsModule]
 })
 export class ContactPageComponent implements AfterViewInit {
   private map: Map;
@@ -31,7 +30,7 @@ export class ContactPageComponent implements AfterViewInit {
     text: new FormControl('', [Validators.required]),
   });
 
-  constructor(private leafletService: LeafletService, private httpClient: HttpClient) {
+  constructor(private leafletService: LeafletService) {
   }
 
 
@@ -42,19 +41,22 @@ export class ContactPageComponent implements AfterViewInit {
   }
 
   public submit() {
+
+    let http = new XMLHttpRequest();
     const form = this.form.getRawValue();
-    console.log(form);
     var dataString = 'name=' + form.name + '&email=' + form.email + '&text=' + form.text;
-    this.httpClient.post('/assets/email/email.php', dataString, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
-      })
-    }).subscribe((x) => {
-      console.log(x);
-    }, (err) => {
+
+    http.addEventListener("load", (e) => {
+      console.log(e);
+    });
+
+    http.addEventListener("error", (e) => {
       console.log('error');
-      console.log(err)
-    })
+      console.log(e);
+    });
+    http.open('post', "script.php", true);
+    http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    http.send(dataString);
   }
 
   private setupMap() {
