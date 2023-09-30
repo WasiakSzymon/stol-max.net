@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { Circle, Marker, Map, Polygon, circle, latLng, tileLayer } from 'leaflet';
 import { LeafletService } from '../services/leaflet.service';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { LeafletService } from '../services/leaflet.service';
   standalone: true,
   providers: [LeafletService],
   imports: [CommonModule, FooterComponent, RouterModule, MatFormFieldModule,
-    MatInputModule, MatButtonModule, ReactiveFormsModule]
+    MatInputModule, MatButtonModule, ReactiveFormsModule, HttpClientModule]
 })
 export class ContactPageComponent implements AfterViewInit {
   private map: Map;
@@ -30,7 +31,7 @@ export class ContactPageComponent implements AfterViewInit {
     text: new FormControl('', [Validators.required]),
   });
 
-  constructor(private leafletService: LeafletService) {
+  constructor(private leafletService: LeafletService, private httpClient: HttpClient) {
   }
 
 
@@ -41,7 +42,19 @@ export class ContactPageComponent implements AfterViewInit {
   }
 
   public submit() {
-    console.log(this.form.getRawValue());
+    const form = this.form.getRawValue();
+    console.log(form);
+    var dataString = 'name=' + form.name + '&email=' + form.email + '&text=' + form.text;
+    this.httpClient.post('/assets/email/email.php', dataString, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      })
+    }).subscribe((x) => {
+      console.log(x);
+    }, (err) => {
+      console.log('error');
+      console.log(err)
+    })
   }
 
   private setupMap() {

@@ -13,6 +13,7 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { MatButtonModule } from '@angular/material/button';
 
 const metaReducers: Array<MetaReducer<any, any>> = [];
 const localStorageSyncReducer = (
@@ -40,6 +41,7 @@ if (typeof window !== "undefined") {
     AppRoutingModule,
     RouterModule,
     HeaderComponent,
+    MatButtonModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({ appState: appReducer, router: routerReducer }, { metaReducers: metaReducers }),
     StoreRouterConnectingModule.forRoot(),

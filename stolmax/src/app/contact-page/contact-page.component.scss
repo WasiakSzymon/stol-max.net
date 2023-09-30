@@ -193,3 +193,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@media (max-width: 880px) {
+    .form-mobile {
+        width: 100% !important;
+    }
+}

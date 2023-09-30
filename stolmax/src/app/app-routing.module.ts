@@ -23,6 +23,10 @@ const routes: Routes = [
     loadComponent: () => import('./contact-page/contact-page.component').then((x) => x.ContactPageComponent)
   },
   {
+    path: 'regulamin',
+    loadComponent: () => import('./rules-page/rules-page.component').then((x) => x.RulesPageComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
