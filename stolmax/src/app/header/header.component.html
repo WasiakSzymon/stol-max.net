@@ -17,19 +17,19 @@
                 alt="Black icon of instagram">
         </a>
         <a target="_blank" rel="nofollow" style="position: absolute; right: 48px; top: 50%;color: black;"
-            aria-label="Facebook fanpage"
-            href="https://www.facebook.com/profile.php?id=100063741032209">
+            aria-label="Facebook fanpage" href="https://www.facebook.com/profile.php?id=100063741032209">
             <img src="https://aniancep.sirv.com/web-images/facebook-icon-1-svg.svg" height="32px" width="32px"
                 alt="facebook icon in black color">
         </a>
     </div>
     <div class="mobile-header">
-        <button mat-fab color="primary" [matMenuTriggerFor]="menu">
+        <button mat-fab color="primary" [matMenuTriggerFor]="menu"
+            aria-label="Button for open 'hamburger' menu where you are able to change pange">
             <mat-icon>menu</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button [routerLink]="['/o-nas']" routerLinkActive="active-link" aria-label="Informations about company"
-                mat-menu-item>O NAS</button>
+            <button [routerLink]="['/o-nas']" routerLinkActive="active-link" mat-menu-item
+                aria-label="Informations about company">O NAS</button>
             <button [routerLink]="['/oferta']" routerLinkActive="active-link" mat-menu-item
                 aria-label="Company offer">OFERTA</button>
             <button [routerLink]="['/galeria']" routerLinkActive="active-link" mat-menu-item
