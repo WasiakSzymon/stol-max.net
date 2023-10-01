@@ -14,6 +14,7 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { MatButtonModule } from '@angular/material/button';
+import { ToastrModule } from 'ngx-toastr';
 
 const metaReducers: Array<MetaReducer<any, any>> = [];
 const localStorageSyncReducer = (
@@ -43,6 +44,7 @@ if (typeof window !== "undefined") {
     HeaderComponent,
     MatButtonModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     StoreModule.forRoot({ appState: appReducer, router: routerReducer }, { metaReducers: metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
