@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import {
   GalleryModule,
@@ -7,7 +7,9 @@ import {
   ImageItem,
   ImageSize,
   ThumbnailsPosition,
-  Gallery
+  Gallery,
+  GalleryRef,
+  GalleryComponent
 } from 'ng-gallery';
 import { LightboxModule, Lightbox } from 'ng-gallery/lightbox';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,6 +34,9 @@ export class GalleryPageComponent implements OnInit {
   items: GalleryItem[] = [];
   baseCdnUrl = 'https://aniancep.sirv.com/';
 
+  @ViewChild(GalleryComponent)
+  galleryEl: GalleryComponent;
+
 
   categories: catType[] = ['Biuro', 'Salon', 'Kuchnia', 'Łazienka', 'Szafy', 'Sypialania'];
   selectedCategory: catType = 'Biuro';
@@ -49,6 +54,7 @@ export class GalleryPageComponent implements OnInit {
   setCategory(cat: catType) {
     this.selectedCategory = cat;
     this.getCategory(cat);
+    this.galleryEl.galleryRef.set(0);
   }
 
   getCategory(cat: catType) {
