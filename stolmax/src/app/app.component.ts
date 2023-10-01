@@ -23,7 +23,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   public scrollPosition$: Observable<boolean>;
   public moreInfo$: Observable<number>;
   public isHome$: BehaviorSubject<boolean> | undefined;
-  public rulesAccepted$: BehaviorSubject<boolean> | undefined;
+  public rulesAccepted$: BehaviorSubject<boolean> | undefined = new BehaviorSubject(true);
 
 
   constructor(private store: Store<{ appState: StolmaxAppState }>,
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.rulesAccepted$ = new BehaviorSubject(localStorage.getItem('rules') === 'true');
+      this.rulesAccepted$.next(localStorage.getItem('rules') === 'true');
       this.isHome$ = new BehaviorSubject(document?.location?.pathname === '/');
       this.moreInfo$?.pipe(skip(1)).subscribe(() => {
         const offsetTop = document.getElementById('content-begin')?.offsetTop;
