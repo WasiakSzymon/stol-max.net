@@ -177,6 +177,11 @@
         display: flex;
         align-items: center;
         padding: 0;
+
+        > img {
+            height: auto;
+            width: 50%;
+        }
     }
 
     .active .logo {
