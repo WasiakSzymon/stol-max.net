@@ -2,7 +2,7 @@ module.exports = {
     apps: [
         {
             name: 'web',
-            script: 'dist/stolmax/browser/main.js',
+            script: 'dist/stolmax/server/main.js',
         },
     ],
 };
