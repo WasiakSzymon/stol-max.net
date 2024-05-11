@@ -8,18 +8,12 @@ import {
   ImageSize,
   ThumbnailsPosition,
   Gallery,
-  GalleryRef,
   GalleryComponent
 } from 'ng-gallery';
 import { LightboxModule, Lightbox } from 'ng-gallery/lightbox';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import biuroImg from '../../assets/gallery/Biuro.json';
-import kuchniaImg from '../../assets/gallery/Kuchnia.json';
-import salonImg from '../../assets/gallery/Salon.json';
-import sypialniaImg from '../../assets/gallery/Sypialnia.json';
-import lazienkaImg from '../../assets/gallery/Łazienka.json'
-import szafyImg from '../../assets/gallery/Szafy.json';
+import { take } from 'rxjs';
 
 export type catType = 'Biuro' | 'Salon' | 'Kuchnia' | 'Łazienka' | 'Szafy' | 'Sypialania'
 @Component({
@@ -38,8 +32,14 @@ export class GalleryPageComponent implements OnInit {
   galleryEl: GalleryComponent;
 
 
-  categories: catType[] = ['Biuro', 'Salon', 'Kuchnia', 'Łazienka', 'Szafy', 'Sypialania'];
-  selectedCategory: catType = 'Biuro';
+  categories: { code: string, label: catType }[] = [
+    { code: 'biuro', label: 'Biuro' },
+    { code: 'salon', label: 'Salon' },
+    { code: 'kuchnia', label: 'Kuchnia' },
+    { code: 'lazienka', label: 'Łazienka' },
+    { code: 'szafy', label: 'Szafy' },
+    { code: 'sypialnia', label: 'Sypialania' },];
+  selectedCategory: { code: string, label: catType } = { code: 'biuro', label: 'Biuro' };
 
   constructor(public gallery: Gallery, public lightbox: Lightbox, public httpClient: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object) { }
@@ -51,60 +51,33 @@ export class GalleryPageComponent implements OnInit {
     }
   }
 
-  setCategory(cat: catType) {
+  setCategory(cat: { code: string, label: catType }) {
     this.selectedCategory = cat;
     this.getCategory(cat);
-    this.galleryEl.galleryRef.set(0);
   }
 
-  getCategory(cat: catType) {
-
-    switch (cat) {
-      case 'Biuro':
-        this.items = biuroImg.map(
+  getCategory(cat: { code: string, label: catType }) {
+    this.httpClient.get<any[]>(`/assets/gallery/${cat.code}.json`).pipe(take(1)).subscribe({
+      next: (elements) => {
+        this.items = elements.map(
           (item) => new ImageItem({ src: this.baseCdnUrl + item.url, thumb: this.baseCdnUrl + item.url, alt: item.alt })
         );
-        break;
-      case 'Kuchnia':
-        this.items = kuchniaImg.map(
-          (item) => new ImageItem({ src: this.baseCdnUrl + item.url, thumb: this.baseCdnUrl + item.url, alt: item.alt })
-        );
-        break;
-      case 'Salon':
-        this.items = salonImg.map(
-          (item) => new ImageItem({ src: this.baseCdnUrl + item.url, thumb: this.baseCdnUrl + item.url, alt: item.alt })
-        );
-        break;
-      case 'Sypialania':
-        this.items = sypialniaImg.map(
-          (item) => new ImageItem({ src: this.baseCdnUrl + item.url, thumb: this.baseCdnUrl + item.url, alt: item.alt })
-        );
-        break;
-      case 'Szafy':
-        this.items = szafyImg.map(
-          (item) => new ImageItem({ src: this.baseCdnUrl + item.url, thumb: this.baseCdnUrl + item.url, alt: item.alt })
-        );
-        break;
-      case 'Łazienka':
-        this.items = lazienkaImg.map(
-          (item) => new ImageItem({ src: this.baseCdnUrl + item.url, thumb: this.baseCdnUrl + item.url, alt: item.alt })
-        );
-        break;
-      default:
-        break;
-    }
+        const lightboxRef = this.gallery.ref('lightbox');
 
+        lightboxRef.setConfig({
+          imageSize: ImageSize.Contain,
+          thumbPosition: ThumbnailsPosition.Top,
+          autoPlay: false,
+          playerInterval: 0,
 
+        });
+        lightboxRef.load(this.items);
+        setTimeout(() => {
+          this.galleryEl.galleryRef.set(0);
+        }, 100)
 
-    const lightboxRef = this.gallery.ref('lightbox');
-
-    lightboxRef.setConfig({
-      imageSize: ImageSize.Contain,
-      thumbPosition: ThumbnailsPosition.Top
-    });
-
-    lightboxRef.load(this.items);
-
+      }
+    })
   }
 }
 

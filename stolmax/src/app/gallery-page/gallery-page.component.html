@@ -11,18 +11,20 @@
   </div>
   <div class="d-flex w-100 flex-column">
     <div class="d-flex w-100 justify-content-center align-items-center mb-4 flex-wrap">
-      <button class="m-3" [class.active-cat]="cat === selectedCategory" *ngFor=" let cat of categories" mat-raised-button
-        (click)="setCategory(cat)">
-        {{cat}}
+      <button class="m-3" [class.active-cat]="cat.label === selectedCategory.label" *ngFor=" let cat of categories"
+        mat-raised-button (click)="setCategory(cat)">
+        {{cat.label}}
       </button>
     </div>
   </div>
   <div class=" d-flex flex-column justify-content-center align-items-center">
     <div class="d-flex" style="position: relative;width: 75vw;" *ngIf="items.length > 0">
-      <gallery  id="basic-test" imageSize="contain" fluid [items]="items" [autoPlay]="true" [playerInterval]="6500"></gallery>
+      <gallery id="basic-test" imageSize="contain" fluid [items]="items" [autoPlay]="true" [playerInterval]="6500">
+      </gallery>
       <button mat-raised-button style="position: absolute; top: 20px; right: 20px; z-index: 1; opacity: 0.7;"
-        (click)="lightbox.open(0, 'lightbox', {panelClass: 'fullscreen'})">Pełny
-        ekran</button>
+        (click)="lightbox.open(0, 'lightbox', {panelClass: 'fullscreen'})">
+        Pełny ekran
+      </button>
     </div>
 
 

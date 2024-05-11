@@ -101,10 +101,13 @@ export class ContactPageComponent implements AfterViewInit {
       color: '#68bd45',
       fillColor: '#68bd45',
       fillOpacity: 0.5,
-
       radius: 10
     }).addTo(this.map);
 
     this.circle.bindPopup('ul. Chałupnicza 3,<br> 43-100 Tychy').openPopup();
+
+    setTimeout(function () {
+      window.dispatchEvent(new Event('resize'));
+  }, 1000);
   }
 }

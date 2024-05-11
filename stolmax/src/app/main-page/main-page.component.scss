@@ -88,25 +88,6 @@
     left: calc(50% - 86px);
 }
 
-@keyframes imgs {
-    0% {
-        transform: translateX(85%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-}
-
-@keyframes textAnim {
-    0% {
-        transform: translateX(-75%);
-    }
-
-    100% {
-        transform: translateX(0%);
-    }
-}
-
 .example-card {
     max-width: 23%;
     margin: 1rem;
@@ -165,4 +146,41 @@
 
 .img-mobile {
     max-width: 100% !important;
+}
+
+.pila {
+    position: absolute;
+    left: -12%;
+    bottom: -10%;
+    animation: rotate 1s linear infinite;
+    animation-play-state: paused;
+    
+
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes imgs {
+    0% {
+        transform: translateX(85%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes textAnim {
+    0% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
