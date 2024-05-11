@@ -1,0 +1,62 @@
+{
+    "hits": [
+        {
+            "_index": "sirvfs-v3",
+            "_type": "_doc",
+            "_id": "e8c03851ab82d80dcd31d29e98018a453df397ff",
+            "_score": null,
+            "_routing": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+            "_source": {
+                "accountId": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+                "filename": "/salon/salon1.jpeg",
+                "dirname": "/salon",
+                "basename": "salon1.jpeg",
+                "extension": ".jpeg",
+                "id": "yFe3L3qAZRSj6EWB65Pg7ZE6PGseOyIH",
+                "ctime": "2023-09-29T13:28:33.151Z",
+                "mtime": "2023-09-29T13:29:12.717Z",
+                "size": 53849,
+                "contentType": "image/jpeg",
+                "meta": {
+                    "width": 960,
+                    "height": 720,
+                    "format": "JPEG",
+                    "duration": 0
+                }
+            },
+            "sort": [
+                "/salon/salon1.jpeg"
+            ]
+        },
+        {
+            "_index": "sirvfs-v3",
+            "_type": "_doc",
+            "_id": "b1981f73703bdf2f2b3a238bf8ba846520ea6729",
+            "_score": null,
+            "_routing": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+            "_source": {
+                "accountId": "lllrnwuemuwbheaf9gyxgodiiuclprf3",
+                "filename": "/salon/salon2.jpeg",
+                "dirname": "/salon",
+                "basename": "salon2.jpeg",
+                "extension": ".jpeg",
+                "id": "poiqdO3CG1N03dQWtpnmOk3awkGTN5Wy",
+                "ctime": "2023-09-29T13:28:32.421Z",
+                "mtime": "2023-09-29T13:29:12.717Z",
+                "size": 49824,
+                "contentType": "image/jpeg",
+                "meta": {
+                    "width": 720,
+                    "height": 960,
+                    "format": "JPEG",
+                    "duration": 0
+                }
+            },
+            "sort": [
+                "/salon/salon2.jpeg"
+            ]
+        }
+    ],
+    "total": 2,
+    "_relation": "eq"
+}
