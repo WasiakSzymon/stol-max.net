@@ -8,9 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "dev:ssr": "ng run stolmax:serve-ssr",
     "serve:ssr": "node dist/stolmax/server/main.js",
-    "build:ssr": "ng build && ng run stolmax:server",
-    "prerender": "ng run stolmax:prerender",
-    "generate:imgs":"node img.srcipt.js"
+    "build:ssr": "ng build:production && ng run stolmax:server:production",
+    "prerender": "ng run stolmax:prerender:production",
+    "postprerender": "node postbuild.script.js",
+    "generate:imgs": "node img.srcipt.js"
   },
   "private": true,
   "dependencies": {
@@ -54,6 +55,7 @@
     "@types/leaflet": "^1.9.12",
     "@types/node": "^18.19.33",
     "browser-sync": "^3.0.0",
+    "purgecss": "^6.0.0",
     "typescript": "~5.4.5"
   }
 }
