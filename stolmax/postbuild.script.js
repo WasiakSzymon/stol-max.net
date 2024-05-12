@@ -3,7 +3,12 @@ fs.readFile('./dist/stolmax/browser/index.html', 'utf8', function (err, data) {
     if (err) {
         return console.log(err);
     }
-    var result = data.replace(/<script/g, '<script nonce="random-csp-nonce" ');
+
+    var result = data.replace(/<script src="runtime/g, '<script nonce="random-csp-nonce" src="runtime');
+    result = result.replace(/<script src="polyfills/g, '<script nonce="random-csp-nonce" src="polyfills');
+    result = result.replace(/<script src="scripts/g, '<script nonce="random-csp-nonce" src="scripts');
+    result = result.replace(/<script src="main/g, '<script nonce="random-csp-nonce" src="main');
+    result = result.replace(/<script id="ng-state"/g, '<script nonce="random-csp-nonce" id="ng-state"');
 
     fs.writeFile('./dist/stolmax/browser/index.html', result, 'utf8', function (err) {
         if (err) return console.log(err);

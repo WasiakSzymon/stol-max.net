@@ -16,7 +16,9 @@ $headerHeight: 80px;
     z-index: 0;
     background: url(/assets/background.webp);
     background-position: center, center;
-    background-size: 100% 100%, 100% 100%;
+    background-size:
+        100% 100%,
+        100% 100%;
     animation: bg 1.5s ease-in;
 }
 .stolmax-container {
@@ -26,7 +28,9 @@ $headerHeight: 80px;
     z-index: 0;
     background: white;
     background-position: center, center;
-    background-size: 100% 100%, 100% 100%;
+    background-size:
+        100% 100%,
+        100% 100%;
     animation: bg 1.5s ease-in;
 }
 
@@ -34,4 +38,13 @@ $headerHeight: 80px;
     height: calc(100% - $headerHeight);
     width: 100%;
     overflow: auto;
+}
+
+.cookies-styles {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 0.4rem 2rem;
 }
