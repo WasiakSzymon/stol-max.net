@@ -10,6 +10,7 @@
     "serve:ssr": "node dist/stolmax/server/main.js",
     "build:ssr": "ng build:production && ng run stolmax:server:production",
     "prerender": "ng run stolmax:prerender:production",
+    "postprerender": "node postbuild.script.js",
     "generate:imgs": "node img.srcipt.js"
   },
   "private": true,
