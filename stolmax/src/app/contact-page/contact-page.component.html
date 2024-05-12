@@ -20,12 +20,12 @@
     <form [formGroup]="form" class="d-flex flex-column w-50 form-mobile" (ngSubmit)="sendEmail($event)">
       <mat-form-field class="py-1 w-100">
         <mat-label>Twoje imię</mat-label>
-        <input matInput placeholder="Marek" formControlName="name" name="name" required>
+        <input matInput placeholder="Marek" formControlName="name" name="name" required autocomplete="name">
         <mat-error *ngIf="form.get('name')?.errors">Pole jest wymagane</mat-error>
       </mat-form-field>
       <mat-form-field class="py-1 w-100">
         <mat-label>Twój adress e-mail</mat-label>
-        <input matInput placeholder="pat@example.com" formControlName="email" name="email" required>
+        <input matInput placeholder="pat@example.com" formControlName="email" name="email" required autocomplete="email">
         <mat-error *ngIf="form.get('email')?.errors?.['required']">Pole jest wymagane</mat-error>
         <mat-error *ngIf="form.get('email')?.errors?.['email']">Adres e-mail jest nieprawidłowy</mat-error>
       </mat-form-field>
