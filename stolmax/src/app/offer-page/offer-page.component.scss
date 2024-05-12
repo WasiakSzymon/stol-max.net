@@ -193,3 +193,36 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Section Container */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 5rem;
+}
+
+/* Section Content */
+.section-content {
+    width: 100%;
+}
+
+/* Section Heading */
+.section-heading {
+    font-size: 32px;
+}
+
+/* Offer Item Box */
+.offer-item-box {
+    padding: 4rem 0;
+}
+
+/* Opinions Section */
+.opinions-section {
+    margin-top: 6rem;
+}
+
+/* Text Center */
+.text-center {
+    text-align: center;
+}

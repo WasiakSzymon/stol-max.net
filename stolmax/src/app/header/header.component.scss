@@ -200,3 +200,22 @@
 .desktop-header {
     display: flex;
 }
+
+
+/* Generated classes */
+.social-icon {
+    position: absolute;
+    top: 50%;
+    color: black;
+}
+
+/* Media query for mobile */
+@media only screen and (max-width: 768px) {
+    .desktop-header {
+        display: none;
+    }
+
+    .mobile-header {
+        display: block;
+    }
+}

@@ -4,19 +4,17 @@
       alt="zielony szeroki cienki prostokąt, element jest przerywnikiem na stronie">
   </div>
   <div class="d-flex w-100">
-    <div class="d-flex w-100 justify-content-center align-items-center mb-5"
-      style="display:flex; align-items: center; justify-content: center; font-size:32px;">
-      <h3 style="font-size: 32px;">KONTAKT</h3>
+    <div class="d-flex w-100 justify-content-center align-items-center mb-5 custom-style-1">
+      <h3>KONTAKT</h3>
     </div>
   </div>
-  <div
-    class="d-flex w-100 Zapraszamy-do-przejrzenia-naszej-bogatej-oferty-by-mgmoga justify-content-center align-items-center">
+  <div class="d-flex w-100 custom-style-2">
     <p>Zapraszamy do kontaktu z nami za pomocą <br>
       formularza/telefonicznie lub bezpośrednią wizytę w naszym zakładzie
     </p>
   </div>
-  <div class="w-100 px-5 d-flex flex-column align-items-center justify-content-center">
-    <h4 style="font-size: 24px;" class="py-3">FORMULARZ KONTAKTOWY</h4>
+  <div class="w-100 px-5 d-flex flex-column align-items-center justify-content-center custom-style-3">
+    <h4 class="py-3">FORMULARZ KONTAKTOWY</h4>
     <form [formGroup]="form" class="d-flex flex-column w-50 form-mobile" (ngSubmit)="sendEmail($event)">
       <mat-form-field class="py-1 w-100">
         <mat-label>Twoje imię</mat-label>
@@ -25,7 +23,8 @@
       </mat-form-field>
       <mat-form-field class="py-1 w-100">
         <mat-label>Twój adress e-mail</mat-label>
-        <input matInput placeholder="pat@example.com" formControlName="email" name="email" required autocomplete="email">
+        <input matInput placeholder="pat@example.com" formControlName="email" name="email" required
+          autocomplete="email">
         <mat-error *ngIf="form.get('email')?.errors?.['required']">Pole jest wymagane</mat-error>
         <mat-error *ngIf="form.get('email')?.errors?.['email']">Adres e-mail jest nieprawidłowy</mat-error>
       </mat-form-field>
@@ -35,13 +34,13 @@
           required></textarea>
         <mat-error *ngIf="form.get('text')?.errors?.['required']">Pole jest wymagane</mat-error>
       </mat-form-field>
-      <button type="submit" style="width: min-content;" mat-raised-button>WYŚLIJ</button>
+      <button type="submit" mat-raised-button>WYŚLIJ</button>
     </form>
   </div>
 
-  <div class="w-100 px-5 mt-5 d-flex flex-column align-items-center justify-content-center">
-    <h4 style="font-size: 24px;" class="py-3">LOKALIZACJA</h4>
-    <div style="height: 400px; width: 100%; border: 2px solid black" id="map">
+  <div class="w-100 px-5 mt-5 d-flex flex-column align-items-center justify-content-center custom-style-4">
+    <h4 class="py-3">LOKALIZACJA</h4>
+    <div id="map">
     </div>
   </div>
 </section>

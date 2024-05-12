@@ -75,3 +75,27 @@
         padding-left: 0 !important;
     }
 }
+
+/* Generated classes */
+.separator {
+    height: 1px;
+    background-color: #ffffff;
+    width: 200px;
+}
+
+.contact-item {
+    display: flex;
+}
+
+.contact-item a {
+    color: white;
+    margin-right: 5px;
+}
+
+.icon-desc {
+    margin-top: 2px;
+}
+
+.footer-text {
+    text-align: center;
+}
