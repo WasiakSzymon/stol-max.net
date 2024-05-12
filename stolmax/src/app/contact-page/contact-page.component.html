@@ -34,13 +34,13 @@
           required></textarea>
         <mat-error *ngIf="form.get('text')?.errors?.['required']">Pole jest wymagane</mat-error>
       </mat-form-field>
-      <button type="submit" mat-raised-button>WYŚLIJ</button>
+      <button type="submit" class="button-send" mat-raised-button>WYŚLIJ</button>
     </form>
   </div>
 
-  <div class="w-100 px-5 mt-5 d-flex flex-column align-items-center justify-content-center custom-style-4">
-    <h4 class="py-3">LOKALIZACJA</h4>
-    <div id="map">
+  <div class="w-100 px-5 mt-5 d-flex flex-column align-items-center justify-content-center">
+    <h4 class="py-3 local-title">LOKALIZACJA</h4>
+    <div class="map" id="map">
     </div>
   </div>
 </section>

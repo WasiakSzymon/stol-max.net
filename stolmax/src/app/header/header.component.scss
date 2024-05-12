@@ -201,12 +201,19 @@
     display: flex;
 }
 
-
 /* Generated classes */
 .social-icon {
     position: absolute;
     top: 50%;
     color: black;
+}
+
+.ig {
+    right: 10px;
+}
+
+.fb {
+    right: 48px;
 }
 
 /* Media query for mobile */

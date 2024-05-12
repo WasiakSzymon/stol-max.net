@@ -86,6 +86,8 @@
     bottom: 10px;
     flex-direction: column-reverse;
     left: calc(50% - 86px);
+    font-size: 12px;
+    align-self: center;
 }
 
 .example-card {
@@ -100,6 +102,7 @@
 
 .text-card {
     height: 100%;
+    font-size: 16px;
 }
 
 .paralax {
@@ -133,6 +136,9 @@
     .card-container {
         flex-wrap: wrap;
         flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
     }
 
     .Najnowsze-trendy-w-meblarstwie {
@@ -146,6 +152,8 @@
 
 .img-mobile {
     max-width: 100% !important;
+    width: 100%;
+    height: auto;
 }
 
 .pila {
@@ -201,26 +209,6 @@
 .image {
     width: 100%;
     height: auto;
-}
-
-.more-info {
-    font-size: 20px;
-    align-self: center;
-}
-
-.card-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.img-mobile {
-    width: 100%;
-    height: auto;
-}
-
-.text-card {
-    font-size: 16px;
 }
 
 .acitons-card-end {

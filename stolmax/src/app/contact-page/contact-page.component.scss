@@ -210,6 +210,8 @@
 
 .custom-style-2 {
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .custom-style-3 {
@@ -219,4 +221,18 @@
 .custom-style-4 {
     border: 2px solid black;
     height: 400px;
+}
+
+.map {
+    height: 400px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.local-title {
+    font-size: 24px;
+}
+
+.button-send {
+    width: min-content;
 }
