@@ -8,8 +8,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { Circle, Marker, Map, } from 'leaflet';
 import { LeafletService } from '../services/leaflet.service';
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
-import { take } from 'rxjs';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
 
@@ -45,28 +43,6 @@ export class ContactPageComponent implements AfterViewInit {
     if (this.leafletService.L) {
       this.setupMap();
     }
-  }
-
-  public submit() {
-    // const form = this.form.getRawValue();
-    // const data = {
-    //   service_id: 'service_9fdtx6h',
-    //   template_id: 'template_pij89ar',
-    //   user_id: 'nB2i5VEJ6rlkb8in73eJc',
-    //   template_params: form
-    // };
-    // this.httpClient.post('https://api.emailjs.com/api/v1.0/email/send', data, {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'text/plain; charset=utf-8'
-    //   })
-    // }).pipe(take(1))
-    //   .subscribe(
-    //     () => {
-    //       console.log('success green')
-    //     },
-    //     (err) => {
-    //       console.log(err);
-    //     }
   }
 
 
@@ -108,6 +84,6 @@ export class ContactPageComponent implements AfterViewInit {
 
     setTimeout(function () {
       window.dispatchEvent(new Event('resize'));
-  }, 1000);
+    }, 1000);
   }
 }
