@@ -44,7 +44,8 @@ server {
         sub_filter_once off;
         sub_filter random-csp-nonce $request_id;
 
-        add_header Content-Security-Policy "default-src 'none'; manifest-src 'self' 'nonce-$request_id'; script-src 'self' 'nonce-$request_id'; style-src 'self' 'nonce-$request_id'; img-src * data:; ba>
+        add_header Content-Security-Policy "default-src 'none'; manifest-src 'self' 'nonce-$request_id'; script-src 'self' 'nonce-$request_id'; style-src 'self' 'nonce-$request_id'; img-src * data: www.googletagmanager.com; base-uri 'self'; font-src 'self'; connect-src 'self' https://stol-max.net www.googletagmanager.com;" always;
+>
 
         add_header Strict-Transport-Security "max-age=31536000; includeSubDomain; preload" always;
         add_header Permissions-Policy "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),autoplay=(),usb=(),gyroscope=(),fullscreen=(self),payment=()";
