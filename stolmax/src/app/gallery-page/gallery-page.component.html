@@ -18,7 +18,7 @@
   </div>
   <div class="d-flex flex-column justify-content-center align-items-center">
     <div class="d-flex gallery-container" *ngIf="items.length > 0">
-      <gallery id="basic-test" imageSize="contain" fluid [items]="items" [autoPlay]="true" [playerInterval]="6500">
+      <gallery nonce="random-csp-nonce" id="basic-test" imageSize="contain" fluid [items]="items" [autoPlay]="true" [playerInterval]="6500">
       </gallery>
       <button mat-raised-button class="fullscreen-button"
         (click)="lightbox.open(0, 'lightbox', {panelClass: 'fullscreen'})">
