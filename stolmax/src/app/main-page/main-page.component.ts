@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, HostListener, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AfterViewInit, Component, HostListener, Inject, PLATFORM_ID, signal } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -22,7 +22,9 @@ export class MainPageComponent implements AfterViewInit {
   // scrollPosition$: Observable<number>;
   // scrollGear: number;
   // scrollDesk: number;
-  constructor(private store: Store<{ appState: StolmaxAppState }>) {
+  constructor(private store: Store<{ appState: StolmaxAppState }>,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {
     // this.scrollPosition$ = store.select(selectScrollPosition);
 
     // this.scrollPosition$.subscribe(e => {
@@ -33,9 +35,14 @@ export class MainPageComponent implements AfterViewInit {
   }
   init = signal(false);
   ngAfterViewInit(): void {
-    this.init.set(true);
+    if (isPlatformBrowser(this.platformId)) {
+      this.init.set(true);
+      setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+      }, 100)
+    }
   }
-  
+
   public moveToMoreInfo() {
     this.store.dispatch(clickMoreInfoBtn());
   }

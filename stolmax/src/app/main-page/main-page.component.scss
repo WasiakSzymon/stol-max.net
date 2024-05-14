@@ -10,7 +10,7 @@
     // background-size: 100% 100%, 100% 100%;
     // animation: bg 1.2s ease-in;
     position: relative;
-    height: calc(100vh - 115px);
+    height: calc(100vh - 80px);
 }
 
 .Najnowsze-trendy-w-meblarstwie {
@@ -43,7 +43,7 @@
     animation: textAnim 1.2s ease-in;
 }
 
-.grid {
+.gridTills {
     display: grid;
     grid-template-rows: repeat(auto, 1fr);
     grid-template-columns: repeat(2, 1fr);
@@ -85,7 +85,7 @@
     position: absolute;
     bottom: 10px;
     flex-direction: column-reverse;
-    left: calc(50% - 86px);
+    left: calc(50% - 77px);
     font-size: 12px;
     align-self: center;
 }

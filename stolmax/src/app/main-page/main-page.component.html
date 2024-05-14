@@ -14,12 +14,12 @@
         <a mat-raised-button class="btn-gallery-start mobile-main-grid" [routerLink]="['/galeria']">GALERIA</a>
     </div>
     <div class="d-flex w-50 h-100 align-items-center justify-content-center mobile-main-grid">
-        <div class="grid" [hidden]="!init">
-            <img src="/assets/stolmax-main-1.webp" width="100%" height="auto" [ngClass]="{'till-1':init}"
+        <div class="gridTills" [hidden]="!init">
+            <img rel="preload" src="/assets/stolmax-main-1.webp" width="100%" height="auto" [ngClass]="{'till-1':init}"
                 alt="Kuchnia brązowe szafki i czarne blaty nowoczesny styl">
-            <img src="/assets/stolmax-main-2.webp" width="100%" height="auto" [ngClass]="{'till-2':init}"
+            <img rel="preload" src="/assets/stolmax-main-2.webp" width="100%" height="auto" [ngClass]="{'till-2':init}"
                 alt="Kuchnia z salonem, biały ściany, wyspa na środku, marmurowe blaty i ciemno brązowe wykończenia oraz meble">
-            <img src="/assets/stolmax-main-3.webp" width="100%" height="auto" [ngClass]="{'till-3':init}"
+            <img rel="preload" src="/assets/stolmax-main-3.webp" width="100%" height="auto" [ngClass]="{'till-3':init}"
                 alt="Kuchnia białe fronty błyszczące, białe marmurowe blaty, na czarnej ścianie">
         </div>
     </div>
