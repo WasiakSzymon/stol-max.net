@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgxSplideModule } from 'ngx-splide';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
 
