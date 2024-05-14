@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,7 +18,7 @@ import { selectScrollPosition } from '../selectors';
   styleUrls: ['./main-page.component.scss'],
   imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule, FooterComponent, RouterModule]
 })
-export class MainPageComponent {
+export class MainPageComponent implements AfterViewInit {
   // scrollPosition$: Observable<number>;
   // scrollGear: number;
   // scrollDesk: number;
@@ -30,6 +30,10 @@ export class MainPageComponent {
     //   this.scrollGear = e/1000;
     //   this.scrollDesk = e/50;
     // })
+  }
+  init = signal(false);
+  ngAfterViewInit(): void {
+    this.init.set(true);
   }
   
   public moveToMoreInfo() {
