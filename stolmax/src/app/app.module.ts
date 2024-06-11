@@ -26,7 +26,6 @@ if (typeof window !== "undefined") {
   metaReducers.push(localStorageSyncReducer);
 }
 
-
 @NgModule({
   declarations: [
     AppComponent

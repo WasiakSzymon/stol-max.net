@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, Inject, OnInit, PLATFORM_ID, ViewChild, inject } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormGroupDirective } from '@angular/forms';
@@ -10,6 +10,7 @@ import { Circle, Marker, Map, } from 'leaflet';
 import { LeafletService } from '../services/leaflet.service';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
+import { CannonicalUrlService } from '../services/cannonical-url.service';
 
 
 @Component({
@@ -17,11 +18,11 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.scss'],
   standalone: true,
-  providers: [LeafletService, ToastrService],
+  providers: [LeafletService, ToastrService, CannonicalUrlService],
   imports: [CommonModule, FooterComponent, RouterModule, MatFormFieldModule,
     MatInputModule, MatButtonModule, ReactiveFormsModule]
 })
-export class ContactPageComponent implements AfterViewInit {
+export class ContactPageComponent implements OnInit, AfterViewInit {
   private map: Map;
   private circle: Circle;
   private marker: Marker;
@@ -35,7 +36,22 @@ export class ContactPageComponent implements AfterViewInit {
     text: new FormControl('', [Validators.required]),
   });
 
-  constructor(private leafletService: LeafletService, private toastrService: ToastrService) {
+  private cannonicalUrlService = inject(CannonicalUrlService);
+  constructor(
+    private leafletService: LeafletService,
+    private toastrService: ToastrService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {
+  }
+
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.cannonicalUrlService.UpdateCannonicalUrl('https://stol-max.net/kontakt');
+      const title = 'KONTAKT - Stol-Max Patrycjusz Wybraniec - Meble na Wymiar | Tychy';
+      const desc = 'Skontaktuj się z nami! Stol-Max w Tychach - meble na wymiar. Zadzwoń, napisz email lub odwiedź nasz zakład. Jesteśmy do Twojej dyspozycji od poniedziałku do piątku, 8:00 - 18:00.';
+      this.cannonicalUrlService.UpdateTitleAndDesc(title, desc);
+    }
   }
 
 

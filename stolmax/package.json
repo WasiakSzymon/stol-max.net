@@ -4,11 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
     "dev:ssr": "ng run stolmax:serve-ssr",
-    "serve:ssr": "node dist/stolmax/server/main.js",
-    "build:ssr": "ng build:production && ng run stolmax:server:production",
+    "build": "ng run stolmax:build:production && ng run stolmax:server:production",
+    "postbuild": "npm run prerender",
     "prerender": "ng run stolmax:prerender:production",
     "postprerender": "node postbuild.script.js",
     "generate:imgs": "node img.srcipt.js"

@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, ViewChild, inject } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import {
   GalleryModule,
@@ -14,6 +14,7 @@ import { LightboxModule, Lightbox } from 'ng-gallery/lightbox';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { take } from 'rxjs';
+import { CannonicalUrlService } from '../services/cannonical-url.service';
 
 export type catType = 'Biuro' | 'Salon' | 'Kuchnia' | 'Łazienka' | 'Szafy' | 'Sypialania'
 @Component({
@@ -21,9 +22,11 @@ export type catType = 'Biuro' | 'Salon' | 'Kuchnia' | 'Łazienka' | 'Szafy' | 'S
   templateUrl: './gallery-page.component.html',
   styleUrls: ['./gallery-page.component.scss'],
   standalone: true,
-  imports: [CommonModule, GalleryModule, FooterComponent, MatButtonModule, LightboxModule, HttpClientModule]
+  imports: [CommonModule, GalleryModule, FooterComponent, MatButtonModule, LightboxModule, HttpClientModule],
+  providers: [CannonicalUrlService]
 })
 export class GalleryPageComponent implements OnInit {
+  private cannonicalUrlService = inject(CannonicalUrlService);
 
   items: GalleryItem[] = [];
   baseCdnUrl = 'https://aniancep.sirv.com/';
@@ -45,9 +48,15 @@ export class GalleryPageComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object) { }
 
 
+
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
+      this.cannonicalUrlService.UpdateCannonicalUrl('https://stol-max.net/galeria');
+      const title = 'Galeria Mebli - Stol-Max Patrycjusz Wybraniec - Meble na Wymiar | Tychy';
+      const desc = 'Zobacz nasze realizacje! Stol-Max oferuje wysokiej jakości meble na wymiar. Przeglądaj galerię zdjęć naszych projektów kuchennych, łazienkowych i innych mebli na zamówienie';
+      this.cannonicalUrlService.UpdateTitleAndDesc(title, desc);
       this.getCategory(this.selectedCategory);
+
     }
   }
 
